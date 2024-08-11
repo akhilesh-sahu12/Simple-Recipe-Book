@@ -1,0 +1,254 @@
+-- Connect to PostgreSQL:
+psql -U postgres
+
+-- Create the recipebook database
+CREATE DATABASE recipebook;
+
+-- List of databases
+\l
+
+-- Connect to the recipebook database
+\c recipebook;
+
+-- Create the recipes table
+CREATE TABLE recipes (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    ingredients TEXT NOT NULL,
+    steps TEXT NOT NULL,
+    image_url VARCHAR(1000)
+);
+
+-- Create the ratings table
+CREATE TABLE ratings (
+    id SERIAL PRIMARY KEY,
+    recipe_id INT REFERENCES recipes(id),
+    user_id INT, -- You may link this to a user table
+    rating INT NOT NULL
+);
+
+-- List of tables
+\dt
+
+------------------------ Data for testing purpose: -----------------------------------------  
+---------------------------------- recipes -------------------------------------------------
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(18, 'Kolhapuri Egg Curry', '4 Egg
+1 tomato
+1 teaspoon turmeric
+salt as required
+1 onion
+1 teaspoon garam masala powder
+1 cup mustard oil
+For Garnishing
+1/2 cup grated coconut', 'Step 1
+Boil the eggs and remove their shells. Now, sprinkle salt and turmeric powder on them. Fry a bit in oil and set aside.
+
+Step 2
+Take another pan and drizzle some oil in it. Add chopped onion and tomato. Fry a bit. Once cooled down, make a paste by grinding in a mixer.
+
+Step 3
+Transfer the mixture to a pan. Keep the flame on medium and add garam masala, a pinch of turmeric and mix. Add salt as per taste.
+
+Step 4
+Cook the mixture for a few minutes, till raw smell of masala goes away. You can also add water according to need. Add the fried eggs and cook for a minute.
+
+Step 5
+Garnish with grated coconut and the dish is ready to be served.', 'https://static.toiimg.com/thumb/79298426.cms?imgsize=323153&width=509&height=340');
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(19, 'Unique Chicken Biryani', '1 1/2 kilograms chicken
+2 tablespoon yoghurt (curd)
+1/2 tablespoon salt
+500 millilitre refined oil
+1 kilograms tomato
+1 handful coriander leaves
+1/2 tablespoon coriander powder
+1 tablespoon salt
+4 green cardamom
+2 kilograms basmati rice
+1/4 cup lemon juice
+1/2 cup coriander leaves
+3 tablespoon refined oil
+1/2 tablespoon edible food color
+4 cinnamon stick
+1 dash black pepper
+4 star anise
+1 tablespoon garlic paste
+1 handful mint leaves
+500 ml buttermilk
+2 tablespoon red chilli powder
+1/4 tablespoon turmeric
+1 kilograms onion
+4 tablespoon refined oil
+1/2 tablespoon cumin powder
+1/2 tablespoon sugar
+1/2 tablespoon garam masala powder
+2 tablespoon chilli powder
+water as required
+1 cup thinly sliced onion
+1/2 cup chopped mint leaves
+1/2 cup milk
+4 black cardamom
+1/2 teaspoon cumin seeds
+4 bay leaf
+1 tablespoon ginger paste
+4 green chillies
+', 'Step 1 Prepare the marinade and marinate the chicken for 12 hours
+In a bowl, add buttermilk and curd, and mix well. Now add washed chicken pieces in it then add salt, chilly powder, turmeric powder. Mix all very well keep it in the fridge for 12 hours or overnight. Afterwards, after 12 hours, soak the rice in water for 2 hours.
+
+Step 2 Make green paste
+Next, heat oil in the pan and add sliced onion in it, fry them till birista is ready. Until then make the green paste by mixing together ginger garlic paste, green chillies, coriander leaves and mint leaves. Use a little buttermilk from marination for grinding all the ingredients to make a fine paste.
+
+Step 3 Marinate chicken again with green paste and other spices
+Now, take out the marinated chicken. Add green paste, turmeric powder, coriander powder, cumin powder, sugar and garam masala powder mix very well keep aside.
+
+Step 4 Cook the marinated chicken for 10-15 minutes
+In a pan or kadhai, add oil. When the oil is hot enough, add dried Indian spices fry for a minute now add onion birista ( take out some birista for topping and garnishing ), chopped tomatoes mix well cook for 5 minutes on medium flame. Now add marinated chicken mix well add chilly powder and salt as per taste mix well close lid cook for 5 minutes on medium heat. Open lid cook till all water reduced from it on medium flame then switch off the flame.
+
+Step 5 Add rice and prepare biryani
+Now in a large vessel, add water then add the salt and lemon juice mix well boil it. When water starts boiling add soaked rice cook it 50 per cent then drain the water from it. Then, in a big vessel spread half rice, on rice spread gravy add birista, chopped coriander leaves and mint leaves on it and sprinkle half lemon juice. Now spread another rice part then spread birista chopped leaves, lemon juice, hot oil, and milk and orange food colour mixture. Close the lid and cook till Biryani cooked very well. For garnishing, take out the biryani in the plate and spread birista and leaves on top. Keep tomato flower on top serve hot.', 'https://static.toiimg.com/thumb/71275689.cms?imgsize=340542&width=509&height=340');
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(20, 'Bread Dahi Vada', '4 slices bread
+1 tablespoon yellow moong dal
+salt as required
+2 cup refined oil
+2 teaspoon sugar
+black salt as required
+2 cup water
+1/4 tablespoon tamrind chutney
+1 tablespoon pomegranate seeds
+1 tablespoon chaat masala powder
+1/4 cup urad dal
+1 teaspoon asafoetida
+1/4 teaspoon baking soda
+1 1/2 cup yoghurt (curd)
+1 tablespoon coriander seeds
+1/2 inch ginger
+2 dashes cumin powder
+2 dashes red chilli powder
+1 dash garam masala powder
+1 tablespoon boondi
+For Filling
+2 teaspoon desiccated coconut
+4 cashews
+4 almonds
+1 tablespoon raisins', 'Step 1 Prepare the dal batter
+Take yellow moong and urad dal together in a bowl and wash them well. Soak them together for about 8-10 hours or overnight. Next day, when the dals are soaked, drain the water and keep aside. Now, in a blender jar, add the soaked dals, green chillies, ginger, asafoetida, salt, baking soda, and a little water. Grind them to a fine paste and transfer to a bowl. Using a whisker, whisk well this paste until the paste is light and fluffy. Once done, keep aside until required.
+
+Step 2 Prepare the filling
+Now, take a bowl and mix chopped almonds, cashews, raisins, and desiccated coconut.
+
+Step 3 Make stuffed vadas
+Next, take a bread slice and cut the corners of each slice. Using a little water, keep the ends of the whole bread wet. Add a little filling in the centre and close the ends to make a round ball. Press the ball a little to give it a Tikki like shape. Using the same process, prepare more such vadas.
+
+Step 4 Fry the Bread Vadas
+Put a wok or kadhai over medium flame and heat oil in it. When the oil is hot enough, dip a vada in the dal batter. Now, grease your hands and take out the dipped vada and place it in the hot oil. Dip more such vadas in the batter and fry all the vadas. Once done, place them on tissue papers that will soak the extra oil.
+
+Step 5 Soak the vadas in the curd mixture
+This step will help you in soaking the fried vadas. Take a large bowl and add ½ cup curd, sugar, salt, water and asafoetida. Whisk well all the ingredients and make sure you use hung curd for this soaking. When this mixture is ready, put the vadas in it and soak them for 5-7 minutes. Make sure you don’t soak these vadas for too long, as this can make your vadas soggy.
+
+Step 6 Make your Dahi Vada Chaat
+While your vadas are soaking, take a bowl and whisk the curd well with black salt, salt and sugar. Once done, take out the soaked vadas and gently press them a little. Place these vadas on a plate, and pour the curd over them. Over this, sprinkle the spices and pour tamarind chutney over them. Finally, garnish your chaat with coriander leave, pomegranate seeds, garam masala, chaat masala powder and some boondi. Serve the chaat chilled.', 'https://static.toiimg.com/thumb/75535760.cms?imgsize=351834&width=509&height=340');
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(21, 'Salted Caramel Pumpkin Latte', '300 ml milk
+2 tablespoon pureed pumpkin
+20 ml vanilla extract
+sea salt as required
+1/2 teaspoon pumpkin pie spice
+20 ml caramel sauce
+1 cup coffee decoction
+1/2 cup whipped cream', 'Step 1 Cook the milk and pumpkin pie spice
+In a small saucepan, combine the milk, pumpkin, caramel, vanilla, and pumpkin pie spice. Stir until the mixture comes to a very slight boil.
+
+Step 2 Blend in nicely
+Remove from the heat immediately and pour the mixture into a blender. Pulse for about 2 minutes or until very frothy.
+
+Step 3 Pour in the mugs
+Divide the milk into 2 large mugs. Pour 1/2 cup coffee into each mug.
+
+Step 4 Add Cool whip and relish!
+Top with Cool Whip, extra caramel and sea salt. pair with your favourite cookies and enjoy!
+
+Tips
+In absence of cool whip, you can use chilled fresh cream and whip it with some sugar to make it delicious.
+You can also add in some cocoa powder to accentuate the taste.', 'https://static.toiimg.com/thumb/78972819.cms?imgsize=1461624&width=509&height=340');
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(22, 'Penne Makhni', '75 gm boiled pasta penne
+5 gm chopped green chilli
+50 gm onion tomato masala
+5 gm chilli flakes
+20 gm salted butter
+50 ml tomato puree
+10 gm peeled,chopped garlic
+80 gm makhni gravy
+10 gm red chilli powder
+20 gm fresh cream
+10 gm grated parmesan cheese', 'Step 1 Saute herbs with onion tomato and makhni gravy
+To prepare this enticing pasta, first heat oil in a pan. When the oil is heated enough, add in the chopped garlic followed by green chilli. Saute well till the colour changes to brown. To this add the onion, tomato masala with tomato puree and add tomato makhni gravy. Cook for about 5 minutes till oil starts leaving the pan.
+
+Step 2 Add in the boiled pasta and cook with sauce
+Next, in the mixture add red chilli powder and butter. Cook for 5 minutes then add in the boiled penne pasta and toss with the prepared sauce. Add little water if required to improve the consistency of the sauce.
+
+Step 3 Top with cheese, chilli flakes and cream and serve
+Finally, top with grated parmesan cheese, chili flakes and fresh cream. Garnish and serve warm.', 'https://static.toiimg.com/thumb/71701454.cms?imgsize=386598&width=509&height=340');
+INSERT INTO public.recipes
+(id, title, ingredients, steps, image_url)
+VALUES(23, 'Pomegranate Epic', '1/2 cup pomegranate seeds
+1/4 cup green apple
+1/4 tablespoon coconut flake
+1/4 cup pineapple
+1 cup water', 'Step 1 Blend the ingredients together
+Blend together all the ingredients and transfer to a glass with ice cubes in it, and enjoy!', 'https://static.toiimg.com/thumb/95432638.cms?imgsize=70374&width=509&height=340');
+
+----------------------------------------- ratings ------------------------------------------------------------
+
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(25, 23, 1, 4);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(26, 23, 3, 5);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(27, 19, 1, 3);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(28, 19, 5, 5);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(29, 19, 6, 2);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(30, 21, 1, 3);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(31, 22, 23, 5);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(32, 22, 22, 4);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(33, 22, 1, 5);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(34, 20, 1, 4);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(35, 20, 11, 3);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(36, 18, 1, 1);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(37, 18, 12, 3);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(38, 18, 121, 5);
+INSERT INTO public.ratings
+(id, recipe_id, user_id, rating)
+VALUES(39, 18, 121, 5);
