@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="styles.css"> 
+<body>
+    <header>
+        <h1>Recipe Details</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section id="recipe-details">
+        <!-- Recipe details will be displayed here -->
+    </section>
+
+    <section id="ratings-section">
+        <h2>Ratings</h2>
+        <ul id="ratings-list">
+            <!-- Ratings will be displayed here -->
+        </ul>
+
+        <h3>Rate this Recipe</h3>
+        <form id="rating-form">
+            <label>userID:</label>
+            <input type="text" id="userID" name="userID" required><br>
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+            <button type="submit">Submit Rating</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; Akhilesh Sahu
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

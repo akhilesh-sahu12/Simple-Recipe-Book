@@ -1,0 +1,256 @@
+/* Reset some default browser styles */
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Recipe cards */
+.recipe-card {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 17px; 
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 22rem;
+}
+#recipe-card{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.card-content{
+  width: 100%;
+}
+
+/* Style the image within the image content */
+.recipe-image {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure the image does not exceed the height of its container */
+}
+
+.recipe-card h2 {
+  margin-top: 0;
+  font-size: 16px;
+  margin: 18px;
+}
+
+.recipe-card img {
+    max-width: 100%; /* Make the image responsive */
+    height: 200px; /* Maintain aspect ratio */
+    width: 100%; /* Set a maximum width of 100% for responsiveness */
+    object-fit: cover; /* Ensure images fill the container without distortion */
+    border-radius: 15px 15px 0px 0px; /* Add a rounded border to the image */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  header {
+    text-align: left;
+  }
+
+  nav ul {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+/* Recipe form container */
+#recipe-form {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form label styles */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Form input and textarea styles */
+input[type="text"],
+textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Recipe details container */
+#recipe-details {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-details h2 {
+  font-size: 24px;
+}
+
+#recipe-details p {
+  margin-bottom: 10px;
+}
+
+#recipe-details img {
+    max-width: 50%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Set a maximum width of 100% for responsiveness */
+    object-fit: cover; /* Ensure images fill the container without distortion */
+    border-radius: 15px; /* Add a rounded border to the image */
+}
+
+/* Ratings section */
+#ratings-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#ratings-section h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+#ratings-list {
+  list-style: none;
+  padding: 0;
+}
+
+#ratings-list li {
+  margin-bottom: 5px;
+}
+
+/* Rating form */
+#rating-form {
+  margin-top: 20px;
+}
+
+#rating-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#rating-form input[type="text"],
+#rating-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#rating-form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the "Details" button */
+.details-button {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #0c8b4c; /* Set your desired background color */
+  color: #fff; /* Set the text color to white or your preferred color */
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0px -9px 6px 15px;
+}
+
+.details-button:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+}
+
+p{
+  margin: 9px 18px 7px 18px
+}
