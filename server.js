@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
@@ -7,11 +8,15 @@ const port = process.env.PORT || 3000;
 
 // Create a PostgreSQL connection pool
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'recipebook',
-  password: 'root',
-  port: 5432,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT, 10),
+  database: process.env.DB_NAME,
+  ssl: {
+      rejectUnauthorized: true,
+      ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n'), // Handle newlines in certificates
+  },
 });
 
 // Test database connection
