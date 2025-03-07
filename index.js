@@ -136,4 +136,8 @@ app.get('/recipes/:id/ratings', async (req, res) => {
 
 // ❌ Remove `app.listen(port, ...)` for Vercel
 // ✅ Export the app instead
-module.exports = app;
+//module.exports = app;
+
+app.listen(port, () => {
+  console.log(`🚀 Server is running on http://localhost:${port}`);
+});
